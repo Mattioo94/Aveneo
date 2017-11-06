@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Aveneo.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Aveneo.Persistance
 {
@@ -7,5 +8,8 @@ namespace Aveneo.Persistance
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
         {
         }
+
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<Request> Requests { get; set; }
     }
 }

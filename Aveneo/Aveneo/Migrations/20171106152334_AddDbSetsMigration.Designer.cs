@@ -11,9 +11,10 @@ using System;
 namespace Aveneo.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20171106152334_AddDbSetsMigration")]
+    partial class AddDbSetsMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,26 +27,21 @@ namespace Aveneo.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("City")
-                        .IsRequired()
-                        .HasMaxLength(255);
+                        .IsRequired();
 
                     b.Property<string>("Code")
-                        .IsRequired()
-                        .HasMaxLength(6);
+                        .IsRequired();
 
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(255);
+                        .IsRequired();
 
                     b.Property<int>("Nr");
 
                     b.Property<string>("Number")
-                        .IsRequired()
-                        .HasMaxLength(13);
+                        .IsRequired();
 
                     b.Property<string>("Street")
-                        .IsRequired()
-                        .HasMaxLength(255);
+                        .IsRequired();
 
                     b.HasKey("Id");
 
@@ -61,8 +57,7 @@ namespace Aveneo.Migrations
                         .IsRequired();
 
                     b.Property<string>("Number")
-                        .IsRequired()
-                        .HasMaxLength(13);
+                        .IsRequired();
 
                     b.HasKey("Id");
 
