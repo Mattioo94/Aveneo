@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -8,6 +9,9 @@ namespace Aveneo.Models
     public class Request
     {
         public int Id { get; set; }
+
+        [Required]
+        public DateTime Date { get; set; }
 
         [Required]
         [StringLength(13, MinimumLength = 10)]

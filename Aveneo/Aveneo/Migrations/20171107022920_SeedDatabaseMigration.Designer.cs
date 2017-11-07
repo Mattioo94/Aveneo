@@ -11,8 +11,8 @@ using System;
 namespace Aveneo.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20171106155146_SeedDatabase")]
-    partial class SeedDatabase
+    [Migration("20171107022920_SeedDatabaseMigration")]
+    partial class SeedDatabaseMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -57,6 +57,8 @@ namespace Aveneo.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("Date");
 
                     b.Property<string>("Headers")
                         .IsRequired();

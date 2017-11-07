@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Aveneo.Persistance;
+using Aveneo.Services;
+using Aveneo.Services.IoC;
 
 namespace Aveneo
 {
@@ -20,6 +22,7 @@ namespace Aveneo
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IRepository, Repository>();
             services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Aveneo")));
             services.AddMvc();
         }
@@ -47,7 +50,7 @@ namespace Aveneo
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}");
 
                 routes.MapSpaFallbackRoute(
                     name: "spa-fallback",
