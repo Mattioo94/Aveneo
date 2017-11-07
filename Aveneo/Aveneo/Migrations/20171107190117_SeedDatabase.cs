@@ -2,7 +2,7 @@
 
 namespace Aveneo.Migrations
 {
-    public partial class SeedDatabaseMigration : Migration
+    public partial class SeedDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -11,8 +11,8 @@ using System;
 namespace Aveneo.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20171107022920_SeedDatabaseMigration")]
-    partial class SeedDatabaseMigration
+    [Migration("20171107190117_SeedDatabase")]
+    partial class SeedDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -14,8 +14,8 @@ namespace Aveneo.Models
         public DateTime Date { get; set; }
 
         [Required]
-        [StringLength(13, MinimumLength = 10)]
-        [RegularExpression(@"^((\d{3}-\d{3}-\d{2}-\d{2})|(\d{3}-\d{2}-\d{2}-\d{3})|([A-Z]{2}\d{10}))|(\d{9})|(\d{10})$")]
+        [StringLength(13, MinimumLength = 9)]
+        [RegularExpression("(^[0-9]{9,10}$)|(^[A-Z]{2}[0-9]{10}$)|(^[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}$)|(^[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{3}$)")]
         public string Number { get; set; }
 
         [Required]
