@@ -31,6 +31,10 @@ export class FindData extends React.Component<any, FindDataState> {
 
     onSubmit = () => {
 
+        this.setState({
+            Res: <div className="loader"></div>
+        });
+
         var inputValue = (document.getElementById('number') as HTMLInputElement).value;
 
         var regexp = new RegExp('(^[0-9]{9,10}$)|(^[A-Z]{2}[0-9]{10}$)|(^[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}$)|(^[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{3})$');
