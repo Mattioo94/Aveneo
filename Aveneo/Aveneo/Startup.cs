@@ -23,6 +23,8 @@ namespace Aveneo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IRepository, Repository>();
+            services.AddScoped<ITools, Tools>();
+
             services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Aveneo")));
             services.AddMvc();
         }
